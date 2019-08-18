@@ -1,0 +1,14 @@
+{
+	"develpment": {
+		"base_url": "dev_url"
+	},
+	"testing": {
+		"base_url": " http://preview.airwallex.com:30001"
+	},
+	"staging": {
+		"base_url": "staging_url"
+	},
+	"production": {
+		"base_url": "production_url"
+	}
+}
