@@ -7,6 +7,10 @@
 
 2. clone project and run `mocha test.helloworld.js`
 
+## Config File
+
+env or config variables are defined in config.json.
+
 
 ## Link
 
