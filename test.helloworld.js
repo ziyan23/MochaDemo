@@ -797,7 +797,6 @@ describe('Bank', function(){
 			let body = get_body();
 			delete body.aba;
 			body.bsb = utils.random_string(6);
-			console.log(body);
 			api_bank(body,function(err,res,body) {
 				assert.equal(400,res.statusCode);
 				assert.equal(get_error('\'bsb\'','\'aba\'','\'US\''),body.error);
@@ -809,7 +808,6 @@ describe('Bank', function(){
 			let body = get_body();
 			delete body.aba;
 			body.cbc = utils.random_string(6);
-			console.log(body);
 			api_bank(body,function(err,res,body) {
 				assert.equal(400,res.statusCode);
 				assert.equal(get_error('\'cbc\'','\'aba\'','\'US\''),body.error);
@@ -817,7 +815,7 @@ describe('Bank', function(){
 			});
 			
 		})
-		it.only('bank_country_code=US,key = aba,length = 8,return 400', function (done) {
+		it('bank_country_code=US,key = aba,length = 8,return 400', function (done) {
 			let body = get_body();
 			body.aba = utils.random_string(8);
 			api_bank(body,function(err,res,body) {
@@ -827,7 +825,7 @@ describe('Bank', function(){
 			});
 			
 		})
-		it.only('bank_country_code=US,key = aba,length = 10,return 400', function (done) {
+		it('bank_country_code=US,key = aba,length = 10,return 400', function (done) {
 			let body = get_body();
 			body.aba = utils.random_string(10);
 			api_bank(body,function(err,res,body) {
@@ -837,7 +835,7 @@ describe('Bank', function(){
 			});
 			
 		})
-		it.only('bank_country_code=US,aba is lost,return 400', function (done) {
+		it('bank_country_code=US,aba is lost,return 400', function (done) {
 			let body = get_body_AU();
 			delete body.aba;
 			api_bank(body,function(err,res,body) {
